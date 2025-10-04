@@ -6,28 +6,28 @@ import time
 pygame.init()
 pygame.mixer.init()
 
-# --- Sound loading helper ---
+
 def load_sound(path):
     if not os.path.exists(path):
         print(f"⚠️ Warning: Sound file not found: {path}")
         return None
     return pygame.mixer.Sound(path)
 
-# --- Load sounds ---
+
 correct_sound = load_sound("Sounds/correct-choice-43861.mp3")
 error_sound   = load_sound("Sounds/error-126627.mp3")
 win_sound     = load_sound("Sounds/level-win-6416.mp3")
 
-# --- Screen setup ---
+
 WIDTH, HEIGHT = 800, 600
 SCREEN = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Card Flip Game")
 
-# --- Card back (black rectangle) ---
+
 CARD_BACK = pygame.Surface((100, 150))
 CARD_BACK.fill((0, 0, 0))
 
-# --- Load card images ---
+
 card_files = [
     "Images/01_of_spades_A.svg.png",
     "Images/Playing_card_heart_A.svg.png",
@@ -43,16 +43,16 @@ for file in card_files:
     img = pygame.transform.scale(img, (100, 150))
     cards.append(img)
 
-# --- Create deck (pairs of cards) ---
+
 deck = cards * 2
 random.shuffle(deck)
 
-# --- Game state ---
+
 flipped = []   # indices of currently flipped cards
 matched = []   # indices of matched cards
 card_positions = []
 
-# --- Layout setup ---
+
 rows, cols = 2, 4
 spacing_x, spacing_y = 120, 180
 offset_x, offset_y = 100, 100
@@ -63,9 +63,9 @@ for row in range(rows):
         y = offset_y + row * spacing_y
         card_positions.append(pygame.Rect(x, y, 100, 150))
 
-# --- Draw everything ---
+
 def draw():
-    SCREEN.fill((34, 139, 34))  # green background
+    SCREEN.fill((34, 139, 34)) 
     for i, rect in enumerate(card_positions):
         if i in matched or i in flipped:
             SCREEN.blit(deck[i], rect)
@@ -73,7 +73,6 @@ def draw():
             SCREEN.blit(CARD_BACK, rect)
     pygame.display.flip()
 
-# --- Game loop ---
 clock = pygame.time.Clock()
 running = True
 check_time = 0
@@ -93,12 +92,12 @@ while running:
                     flipped.append(i)
                     break
 
-            # When 2 cards are flipped, start checking
+           
             if len(flipped) == 2:
                 checking = True
                 check_time = time.time()
 
-    # --- Handle matching after short delay ---
+    
     if checking and time.time() - check_time > 1:
         if deck[flipped[0]] == deck[flipped[1]]:
             matched.extend(flipped)
@@ -110,7 +109,7 @@ while running:
         flipped.clear()
         checking = False
 
-    # --- Win condition ---
+   
     if len(matched) == len(deck):
         SCREEN.fill((0, 128, 0))
         font = pygame.font.Font(None, 74)
