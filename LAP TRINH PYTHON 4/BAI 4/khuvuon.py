@@ -47,8 +47,8 @@ class Game:
         ten = input("Tên cây bạn muốn chăm là: ")
         for i in range(Game.so_luong):
             if game[i].ten == ten and game[i].check_tinh_trans():
-                nuoc_tang_them = int(input("Bạn muốn tuổi bao nhiêu mì nuốc?"))
-                anh_sang_tang_them = int(input("Bạn sẽ để cây ngoài trời máy tiếng?"))
+                nuoc_tang_them = int(input("Bạn muốn tưới bao nhiêu ml nuốc?"))
+                anh_sang_tang_them = int(input("Bạn sẽ để cây ngoài trời mấy tiếng?"))
                 if game[i].nuoc is not None and game[i].anh_sang is not None:
                     game[i].gia_thanh = (nuoc_tang_them, anh_sang_tang_them)
                 print(game[i])
