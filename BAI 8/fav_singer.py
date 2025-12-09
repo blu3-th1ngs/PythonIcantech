@@ -1,3 +1,5 @@
+import os
+st.write("Working directory:", os.getcwd())
 import streamlit as st
 
 with st.sidebar:
