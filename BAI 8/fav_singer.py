@@ -12,7 +12,7 @@ with st.sidebar:
 
 st.title('Bài hát yêu thích')
 st.write('As It Was')
-audio_file = open('source/asitwas.mp3', 'rb')
+audio_file = open('BAI 8/source/asitwas.mp3', 'rb')
 st.audio(audio_file, format='audio/mp3')
 
 st.title('MV yêu thích')
