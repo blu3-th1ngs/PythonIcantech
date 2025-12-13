@@ -2,7 +2,7 @@
 import streamlit as st
 
 with st.sidebar:
-    image = 'source/images_converted.png'
+    image = 'BAI 8/source/images_converted.png'
     st.image(image, caption='Harry Styles')
     
     st.write('Họ và tên: Harry Edward Styles')
