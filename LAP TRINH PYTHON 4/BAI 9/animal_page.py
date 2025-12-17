@@ -17,59 +17,59 @@ with col5:
 if b1:
     with col6:
         st.write('Âm thanh')
-        audio = open('cat-meow-401729.mp3', 'rb')
+        audio = open('BAI 9/cat-meow-401729.mp3', 'rb')
         st.audio(audio, format='audio/mp3')
         st.write('Video')
         video = 'https://www.youtube.com/watch?v=W86cTIoMv2U'
         st.video(video, format='video/mp4')
     with col7:
-        image = 'cat.jfif'
+        image = 'BAI 9/cat.jfif'
         st.image(image, caption='Con mèo')
 
 if b2:
     with col6:
         st.write('Âm thanh')
-        audio = open('free-dog-bark-419014.mp3', 'rb')
+        audio = open('BAI 9/free-dog-bark-419014.mp3', 'rb')
         st.audio(audio, format='audio/mp3')
         st.write('Video')
         video = 'https://www.youtube.com/watch?v=zb9l63Nm9zU'
         st.video(video, format='video/mp4')
     with col7:
-        image = 'dog.jfif'
+        image = 'BAI 9/dog.jfif'
         st.image(image, caption='Con chó')
 
 if b3:
     with col6:
         st.write('Âm thanh')
-        audio = open('monkey-128368.mp3', 'rb')
+        audio = open('BAI 9/monkey-128368.mp3', 'rb')
         st.audio(audio, format='audio/mp3')
         st.write('Video')
         video = 'https://www.youtube.com/watch?v=icd_ob8UWgQ'
         st.video(video, format='video/mp4')
     with col7:
-        image = 'monkey.jfif'
+        image = 'BAI 9/monkey.jfif'
         st.image(image, caption='Con khỉ')
 
 if b4:
     with col6:
         st.write('Âm thanh')
-        audio = open('eagle-281163.mp3', 'rb')
+        audio = open('BAI 9/eagle-281163.mp3', 'rb')
         st.audio(audio, format='audio/mp3')
         st.write('Video')
         video = 'https://www.youtube.com/watch?v=1ryv1u2yXCk'
         st.video(video, format='video/mp4')
     with col7:
-        image = 'eagle.jfif'
+        image = 'BAI 9/eagle.jfif'
         st.image(image, caption='Đại bàng')
 
 if b5:
     with col6:
         st.write('Âm thanh')
-        audio = open('chicken-cluking-type-3-293320.mp3', 'rb')
+        audio = open('BAI 9/chicken-cluking-type-3-293320.mp3', 'rb')
         st.audio(audio, format='audio/mp3')
         st.write('Video')
         video = 'https://youtu.be/SNSr8ti3Y4A'
         st.video(video, format='video/mp4')
     with col7:
-        image = 'chicken.jfif'
+        image = 'BAI 9/chicken.jfif'
         st.image(image, caption='Con gà')
