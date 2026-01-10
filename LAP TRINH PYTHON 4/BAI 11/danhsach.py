@@ -1,5 +1,7 @@
 import streamlit as st
 
+bill = {}
+
 with st.form('Order đồ uống'):
     drinks = ('Trà sữa truyền thống', 'Trà sữa matcha', 'Trà sữa trái cây', 'Trà sữa socola', 'Trà sữa khoai môn', 'Trà sữa oolong')
     option_drink = st.selectbox('Bạn muốn loại đồ uống gì?', drinks)
@@ -21,6 +23,9 @@ with st.form('Order đồ uống'):
     
     nums = st.slider('Số lượng bạn muốn đặt:', 0, 10, 1)
     
+    submitted = st.form_submit_button("Xác nhận")
+
+if submitted:
     bill = {
         'Loại đồ uống:': option_drink,
         'Loại đường:': option_sugar,
@@ -31,17 +36,18 @@ with st.form('Order đồ uống'):
         'Số lượng:': nums
     }
     
-    submitted = st.form_submit_button("Xác nhận")
+    st.write('Bạn đã chọn:')
+    for x, y in bill.items():
+        st.write(x, y)
     
-    if submitted:
-        st.write('Bạn đã chọn:')
-        for x, y in bill.items():
-            st.write(x, y)
-    
-    print_bill = st.checkbox('In hoá đơn')
-    
-    if print_bill:
+    if bill:
         ans = ''
         for x in bill:
             ans += str(x) + ' ' + str(bill[x]) + '\n'
-        st.download_button('Tải hoá đơn', ans, file_name='hoa_don.txt')
+        
+        st.download_button(
+            label='Tải hoá đơn',
+            data=ans,
+            file_name='hoa_don.txt',
+            mime='text/plain'
+        )
