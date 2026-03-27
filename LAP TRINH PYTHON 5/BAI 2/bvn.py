@@ -1,10 +1,11 @@
 import streamlit as st
 import pandas as pd
+import os
 
 st.set_page_config(page_title="Dự án Biểu diễn Dữ liệu", layout="wide")
 st.title("📊 Website Biểu diễn Dữ liệu")
 
-file_path = "data_lesson2_none_header.csv"
+file_path = os.path.join("BAI 2", "data_lesson2_none_header.csv")
 
 try:
     column_names = ['Thời gian', 'Nội dung', 'Địa điểm', 'Cảm xúc']
@@ -24,6 +25,6 @@ try:
     st.dataframe(df, use_container_width=True)
 
 except FileNotFoundError:
-    st.error(f"Không tìm thấy file '{file_path}'. Hãy kiểm tra lại tên file.")
+    st.error(f"Không tìm thấy file tại: {file_path}. Bạn hãy kiểm tra đã tạo thư mục 'BAI 2' chưa nhé!")
 except Exception as e:
     st.error(f"Lỗi: {e}")
