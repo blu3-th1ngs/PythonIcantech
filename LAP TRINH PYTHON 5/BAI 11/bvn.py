@@ -8,7 +8,7 @@ def text_to_speech(text_vietnamese):
     tts = gTTS(text=text_vietnamese, lang='vi', slow=False)
     filename = "temp_voice.mp3"
     tts.save(filename)
-
+  
     playsound(filename)
 
     if os.path.exists(filename):
